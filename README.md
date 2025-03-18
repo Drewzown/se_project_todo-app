@@ -1,17 +1,20 @@
 # Simple Todo App
 
-Give a brief description of the project here. Feel free to give it a different name.
-
+Is available on moblie devices as well as web devices.
+App is very simple.
 ## Functionality
 
-Give a more detailed explanation of the project and its functionality.
+Users can delete and add todo tasks. TODO App is simple web application. Check off tasks as they're completed, as well as add a due date to each task.
 
 ## Technology
 
-Give a description of the technologies and techniques used. Pictures, GIFs, or screenshots that detail the project features are recommended.
+1 JavaScript
+2 Modules
+3 CSS
+4 HTML
 
 ## Deployment
 
 This project is deployed on GitHub Pages:
 
-- ADD LINK HERE
+- [Deployment Link](https://drewzown.github.io/se_project_todo-app/)
