@@ -1,6 +1,7 @@
 class FormValidator {
   constructor(settings, formEl) {
     this._inputSelector = settings.inputSelector;
+    this._formSelector = settings.formSelector; // Fixed typo from _formSelector
     this._submitButtonSelector = settings.submitButtonSelector;
     this._errorClass = settings.errorClass;
     this._inputErrorClass = settings.inputErrorClass;
@@ -8,20 +9,20 @@ class FormValidator {
     this._formEl = formEl;
   }
 
-  _showInputError(inputElement) {
-    this._errorElementId = `#${inputElement.id}-error`;
-    this._errorElement = this._formEl.querySelector(this._errorElementId);
+  _showInputError(inputElement, errorMessage) {
+    const errorElementId = `#${inputElement.id}-error`;
+    const errorElement = this._formEl.querySelector(errorElementId);
     inputElement.classList.add(this._inputErrorClass);
-    this._errorElement.textContent = this._errorMessage;
-    this._errorElement.classList.add(this._errorClass);
+    errorElement.textContent = errorMessage;
+    errorElement.classList.add(this._errorClass);
   }
 
   _hideInputError(inputElement) {
-    this._errorElementId = `#${inputElement.id}/*-error`;
-    this._errorElement = this._formEl.querySelector(this._errorElementId);
+    const errorElementId = `#${inputElement.id}-error`;
+    const errorElement = this._formEl.querySelector(errorElementId);
     inputElement.classList.remove(this._inputErrorClass);
-    this._errorElement.classList.remove(this._errorClass);
-    this._errorElement.textContent = "";
+    errorElement.classList.remove(this._errorClass);
+    errorElement.textContent = "";
   }
 
   _checkInputValidity(inputElement) {
@@ -55,9 +56,7 @@ class FormValidator {
     this._buttonElement = this._formEl.querySelector(
       this._submitButtonSelector
     );
-
     this._toggleButtonState();
-
     this._inputList.forEach((inputElement) => {
       inputElement.addEventListener("input", () => {
         this._checkInputValidity(inputElement);
@@ -66,9 +65,19 @@ class FormValidator {
     });
   }
 
+  // Public method required by Task 6
+  resetValidation() {
+    this._inputList.forEach((inputElement) => {
+      this._hideInputError(inputElement);
+    });
+    this._formEl.reset();
+    this._toggleButtonState();
+  }
+
   enableValidation() {
     this._formEl.addEventListener("submit", (evt) => {
       evt.preventDefault();
+      this.resetValidation(); // Reset on submit (optional, already called in index.js)
     });
     this._setEventListeners();
   }
