@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="A picture viewing app" />
+    <meta name="author" content="Damien Drew" />
+    <meta name="keywords" content="??" />
+    <title>Spots</title>
+    <link rel="stylesheet" href="./pages/index.css" />
+    <link rel="icon" type="images/x-icon" href="./favicon.ico" />
+  </head>
+  <body>
+    <div class="page">
+      <header class="header">
+        <img src="./images/logo.svg" alt="Spots Logo" class="header__logo" />
+      </header>
+      <main class="content">
+        <section class="profile">
+            <img
+              src="./images/avatar.jpg"
+              alt="head shot of Bessie Coleman a civil aviator"
+              class="profile__avatar"
+            />
+          <div class="profile__details">
+            <h1 class="profile__name overflow overflow_type_multi">
+              Bessie Coleman
+            </h1>
+            <h2 class="profile__about overflow overflow_type_multi">
+              Civil Aviator
+            </h2>
+            <div class="profile__container-button">
+              <button type="button" class="button profile__button-edit">Edit Profile</button>
+              <button
+                class="button profile__button-add"
+                aria-label="Add a new post button"
+                type="button"
+              >
+                <img
+                  src="./images/add-icon.svg"
+                  alt="Add icon"
+                  class="profile__add-icon"
+                />New Post
+              </button>
+            </div>
+          </div>
+        </section>
+        <section class="cards">
+          <ul class="cards__list">
+            <li class="card">
+              <img
+                src="./images/1-photo-by-moritz-feldmann-from-pexels.jpg"
+                alt="View of buildings adjacent to a ski resort"
+                class="card__image"
+              />
+              <div class="card__textbox">
+                <h2 class="card__text overflow overflow_type_single">
+                  Val Thorens
+                </h2>
+                <button
+                  class="button card__button-like"
+                  aria-label="Like Button"
+                  type="button"
+                ></button>
+              </div>
+            </li>
+            <li class="card">
+              <img
+                src="./images/2-photo-by-ceiline-from-pexels.jpg"
+                alt="View of a restaurant with seating on the street"
+                class="card__image"
+              />
+              <div class="card__textbox">
+                <h2 class="card__text overflow overflow_type_single">
+                  Restaurant terrace
+                </h2>
+                <button
+                  class="button card__button-like"
+                  aria-label="Like Button"
+                  type="button"
+                ></button>
+              </div>
+            </li>
+            <li class="card">
+              <img
+                src="./images/3-photo-by-tubanur-dogan-from-pexels.jpg"
+                alt="View of tables and chairs with people eating"
+                class="card__image"
+              />
+              <div class="card__textbox">
+                <h2 class="card__text overflow overflow_type_single">
+                  An outdoor cafe
+                </h2>
+                <button
+                  class="button card__button-like"
+                  aria-label="Like Button"
+                  type="button"
+                ></button>
+              </div>
+            </li>
+            <li class="card">
+              <img
+                src="./images/4-photo-by-maurice-laschet-from-pexels.jpg"
+                alt="A long suspended bridge over a forest"
+                class="card__image"
+              />
+              <div class="card__textbox">
+                <h2 class="card__text overflow overflow_type_single">
+                  A very long bridge, over the forest in Germany
+                </h2>
+                <button
+                  class="button card__button-like"
+                  aria-label="Like Button"
+                  type="button"
+                ></button>
+              </div>
+            </li>
+            <li class="card">
+              <img
+                src="./images/5-photo-by-van-anh-nguyen-from-pexels.jpg"
+                alt="Man walking down a tunnel with lots of windows"
+                class="card__image"
+              />
+              <div class="card__textbox">
+                <h2 class="card__text overflow overflow_type_single">
+                  Tunnel with morning light
+                </h2>
+                <button
+                  class="button card__button-like"
+                  aria-label="Like Button"
+                  type="button"
+                ></button>
+              </div>
+            </li>
+            <li class="card">
+              <img
+                src="./images/6-photo-by-moritz-feldmann-from-pexels.jpg"
+                alt="A cabin in the woods on a snowy day"
+                class="card__image"
+              />
+              <div class="card__textbox">
+                <h2 class="card__text overflow overflow_type_single">
+                  Mountain House
+                </h2>
+                <button
+                  class="button card__button-like"
+                  aria-label="Like Button"
+                  type="button"
+                ></button>
+              </div>
+            </li>
+          </ul>
+        </section>
+      </main>
+      <footer class="footer">
+        <h3 class="footer__text">2025 &copy; Spots</h3>
+      </footer>
+      <div class="modal modal_opened">
+        <div class="modal__container">
+          <button  class="modal__close-btn"
+          src="./images/Close.svg"
+          alt="closeWindow">
+            <img
+            src="./images/Close.svg"
+            alt="close"
+            class="modal__close-btn"
+            />
+          </button>
+          <h2 class="modal__title">Edit profile</h2>
+          <form name="edit-profile" class="modal__form">
+            <label for="name" class="modal__label">
+              Name
+              <input 
+              id="name"
+              type="text" 
+              class="modal__input"
+              placeholder="Type your name"
+              />
+            </label>
+            <label for="description" class="modal__label">
+              Description
+              <input 
+              id="description"
+              type="text" 
+              class="modal__input"
+              placeholder="Describe yourself"
+              />
+            </label>
+            <button class="modal__submit-btn"
+            src="./images/Save.svg"
+            alt="saveWindow">>
+              <img
+                  src="./images/Save.svg"
+                  alt="save"
+                  class="modal__submit-btn"
+                  />
+            </button>
+          </form>
+      </div>
+    </div>
+    <script defer src="./scripts/validation.js"></script>
+<script defer src="./scripts/index.js"></script>
+  </body>
+</html>
